@@ -67,20 +67,44 @@ int main() {
   //   cout<<mpp[number]<<endl;
   // }
 
-  string s;
-  cin>>s;
-  map<char,int> jang;
-  for( int i = 0; i < s.size() ; i++ ){
-    jang[s[i]] += 1;
+  // string s;
+  // cin>>s;
+  // map<char,int> jang;
+  // for( int i = 0; i < s.size() ; i++ ){
+  //   jang[s[i]] += 1;
+  // }
+
+  // int q;
+  // cin>>q;
+  // while(q--){
+  //   char l;
+  //   cin>>l;
+
+  //   cout<<jang[l]<<endl;
+  // }
+
+  int n;
+  cin>>n;
+  int arr[n];
+  for( int i = 0; i < n; i++ ){
+    cin>>arr[i];
+  }
+  unordered_map<int,int> mpp;
+
+  // precompute 
+  for( int i = 0; i < n; i++ ){
+    mpp[arr[i]]++;
+  }
+  for( auto it : mpp ){
+    cout<<it.first<<"=>"<<it.second<<endl;
   }
 
   int q;
   cin>>q;
   while(q--){
-    char l;
-    cin>>l;
-
-    cout<<jang[l]<<endl;
+    int number;
+    cin>>number;
+    cout<<mpp[number]<<endl;
   }
 
   return 0;
