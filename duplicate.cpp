@@ -3,16 +3,14 @@
 using namespace std;
 
 vector<int> duplicate( vector<int> &arr, int n ){
-  vector<int> temp;
-  for( int i = 1; i < n; i++ ){
-    if( arr[i] != arr[i-1] ){
-      temp.push_back(arr[i-1]);
+  int i = 0;
+  for( int j = 1; j < n; j++ ){
+    if( arr[j] != arr[i] ){
+      arr.push_back(arr[j]);
+      i++;
     }
   }
-  for( int i = 0; i < temp.size(); i++ ){
-    arr[i] = temp[i];
-  }
-  return arr;
+  return arr
 }
 
 int main(){
